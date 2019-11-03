@@ -4,26 +4,47 @@ import { View, Text, StyleSheet } from "react-native";
 
 import ColorCounter from "./ColorCounter";
 
+const COLOR_INCREMENT = 15;
+
 const SquareScreen = () => {
   const [red, setRed] = useState(0);
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
+  const setColor = (color, change) => {
+    if (color + change > 255 || color + change < 0) return false;
+    return true;
+  };
+
   return (
     <View>
       <ColorCounter
-        onIncrease={() => setRed(red + 1)}
-        onDecrease={() => setRed(red - 1)}
+        onIncrease={() => {
+          if (setColor(red, COLOR_INCREMENT)) setRed(red + COLOR_INCREMENT);
+        }}
+        onDecrease={() => {
+          if (setColor(red, -COLOR_INCREMENT)) setRed(red - COLOR_INCREMENT);
+        }}
         color="Red"
       ></ColorCounter>
       <ColorCounter
-        onIncrease={() => setGreen(green + 1)}
-        onDecrease={() => setGreen(green - 1)}
+        onIncrease={() => {
+          if (setColor(green, COLOR_INCREMENT))
+            setGreen(green + COLOR_INCREMENT);
+        }}
+        onDecrease={() => {
+          if (setColor(green, -COLOR_INCREMENT))
+            setGreen(green - COLOR_INCREMENT);
+        }}
         color="Green"
       ></ColorCounter>
       <ColorCounter
-        onIncrease={() => setBlue(blue + 1)}
-        onDecrease={() => setBlue(blue - 1)}
+        onIncrease={() => {
+          if (setColor(blue, COLOR_INCREMENT)) setBlue(blue + COLOR_INCREMENT);
+        }}
+        onDecrease={() => {
+          if (setColor(blue, -COLOR_INCREMENT)) setBlue(blue - COLOR_INCREMENT);
+        }}
         color="Blue"
       ></ColorCounter>
       <Text>Square Screen</Text>
