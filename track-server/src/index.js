@@ -14,7 +14,7 @@ app.use(authRoutes);
 app.use(trackRoutes);
 
 const mongoUri =
-  "mongodb+srv://ketan2:8806283835@cluster0-yfowx.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://<admin:password>@cluster0-yfowx.mongodb.net/test?retryWrites=true&w=majority";
 if (!mongoUri) {
   throw new Error(
     `MongoURI was not supplied.  Make sure you watch the video on setting up Mongo DB!`
