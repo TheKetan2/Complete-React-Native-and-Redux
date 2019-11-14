@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from "react-native";
 const AccountScreen = () => {
   return (
     <View>
-      <Text> Track Detail Screen</Text>
+      <Text> Account Screen</Text>
     </View>
   );
 };
