@@ -12,9 +12,9 @@ const SignUpScreen = ({ navigation }) => {
 
   console.log(state);
 
-  useEffect(() => {
-    tryLocalSignIn();
-  }, []);
+  // useEffect(() => {
+  //   tryLocalSignIn();
+  // }, []);
 
   return (
     <View style={styles.container}>
