@@ -6,7 +6,7 @@ const TrackListScreen = ({ navigation }) => {
     <View>
       <Text> Track List Screen</Text>
       <Button
-        title="GO to track details"
+        title="Go to track details"
         onPress={() => navigation.navigate("TrackDetail")}
       ></Button>
     </View>
